@@ -7,7 +7,7 @@ header{
     display: flex;
     gap: 1em;
     justify-content: space-between;
-    padding: 1%;
+    padding: 0 1% 0 1%;
     color: #fff;
     background-color: #1b0075;
     font-size: 1.5em;
@@ -17,6 +17,7 @@ header{
 }
 nav{
     display: flex;
+    align-items: center;
     gap: 2em;
 }
 body{
@@ -30,12 +31,12 @@ a {
     z-index: 1;
 }
 
-a:hover{
+.line_link:hover{
     color: #000;
     transition: 1s;
 }
 
-a::before {
+.line_link::before {
   content: '';
   background-color: #9dff00a2;
   position: absolute;
@@ -47,7 +48,7 @@ a::before {
   transition: all .3s ease-in-out;
 }
 
-a:hover::before {
+.line_link:hover::before {
   bottom: 0;
   height: 100%;
   background-color: #9dff00;
@@ -104,4 +105,13 @@ input::selection{
 }
 input:focus{
     outline: none;
+}
+.logo{
+    width: 2em;
+    height: 2em;
+}
+.logotype{
+    display: flex; 
+    align-items: center;
+    gap: 0.5em;
 }
