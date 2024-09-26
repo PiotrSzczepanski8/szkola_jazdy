@@ -23,6 +23,9 @@ nav{
 body{
     margin: 0;
 }
+input[type=password]{
+    margin-bottom: 5%;
+}
 a {
 	text-decoration: none;
 	color: #ffffff;
@@ -93,6 +96,12 @@ main{
     padding: 5%;
     font-family: MontserratBold;
     cursor: pointer;
+    transition: 0.5s;
+}
+.login_submit:hover{
+    background-color: #9dff00;
+    color: #000;
+    transition: 0.5s;
 }
 input{
     font-family: MontserratBold;
