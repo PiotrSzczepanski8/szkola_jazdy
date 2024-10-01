@@ -103,6 +103,11 @@ main{
     color: #000;
     transition: 0.5s;
 }
+.home_login{
+    width: 20%;
+    font-family: MontserratBold;
+    margin-top: 2%;
+}
 input{
     font-family: MontserratBold;
     border: none;
