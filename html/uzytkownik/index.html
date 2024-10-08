@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" href="../media/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="shortcut icon" href="../../media/logo.svg" type="image/x-icon">
     <title>Szkoła jazdy</title>
 </head>
 <body>
@@ -13,17 +13,19 @@
             <section>
                 <a href="index.html" class="logotype">
                     Szkoła Jazdy
-                    <img src="../media/logo.svg" class="logo">
+                    <img src="../../media/logo.svg" class="logo">
                 </a>
             </section> 
             <nav>
                 <a href="login.html" class="line_link">zaloguj się</a>
+                <a href="register.html" class="line_link">zarejestruj się</a>
             </nav>
         </header>
         <main>
-            <section class="home_login">
-                <p>Zaloguj się, żeby zobaczyć bazę danych.</p>
-                <button class="login_submit" onclick="openLogin()">Zaloguj się</button>
+            <section class="home_login" id="home">
+                <h1>Kup kurs już dzisiaj!</h1>
+                    <a class="login_submit home_button"  href="register.html">zarejestruj się</a>
+                    <a class="login_submit home_button" href="login.html">zaloguj się</a>
             </section>
             <section class="tables">
                 

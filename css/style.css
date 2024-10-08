@@ -2,6 +2,9 @@
     font-family: MontserratBold;
     src: url(../fonts/MontserratBold-DOWZd.ttf)
 }
+body *::selection{
+    background-color: #9dff00;
+}
 
 header{
     display: flex;
@@ -14,6 +17,7 @@ header{
     font-weight: bold;
     font-family: MontserratBold;
     user-select: none;
+    position: sticky;
 }
 nav{
     display: flex;
@@ -55,6 +59,12 @@ a {
   bottom: 0;
   height: 100%;
   background-color: #9dff00;
+}
+#signout::before{
+    background-color: #ff0000d4;
+}
+#signout:hover::before{
+    background-color: #ff1e1e;
 }
 main{
     display: flex;
@@ -128,4 +138,16 @@ input:focus{
     display: flex; 
     align-items: center;
     gap: 0.5em;
+}
+#home{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.home_button{
+    width: 15%;
+    padding: 1%;
+    border-radius: 1em;
 }
