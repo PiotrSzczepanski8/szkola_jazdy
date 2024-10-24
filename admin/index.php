@@ -16,11 +16,32 @@
                     <img src="../public/logo.svg" class="logo">
                 </a>
             </section>
+            <nav>
+                <?php
+                    session_start();
+                    if(isset($_SESSION['name']) && isset($_SESSION['surname'])){
+                        $imie = $_SESSION['name'];
+                        $nazwisko = $_SESSION['surname'];
+                        echo "<p style='margin: 0; display: flex; align-items: center;'>".$imie." ".$nazwisko."</p>";
+                    }
+                ?>
+                <a href='../public/logout.php' class='line_link logout'>wyloguj</a>
+            </nav>
         </header>
         <main>
             <section class="home_login" id="home">
-                <h1>Witaj pracowniku! <br> Zaloguj się do systemu:</h1>
-                    <a class="login_submit home_button" href="login.php">zaloguj się</a>
+                <?php
+                    // session_start();
+                    if(isset($_SESSION['user_type'])){
+                        $user_type = $_SESSION['user_type'];
+                        if($user_type == "admin"){
+
+                        }else{
+                            
+                        }
+                    }
+
+                ?>
             </section>
             <section class="tables">
                 

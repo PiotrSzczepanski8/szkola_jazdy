@@ -10,13 +10,18 @@
         $query = "SELECT * FROM pracownik WHERE login='$login' and haslo='$password'";
 
         $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
 
         if(mysqli_num_rows($result) > 0){
             $logged = true;
             session_start();
             $_SESSION['logged'] = $logged;
             $_SESSION['login'] = $login;
+            $_SESSION['name'] = $row['imie'];
+            $_SESSION['surname'] = $row['nazwisko'];
+            $_SESSION['user_type'] = $row['typ_pracownika'];
             header("Location: ../admin/index.php");
+            exit();
         }
 
         $query = "SELECT * FROM kursant WHERE login='$login'and haslo='$password'";
