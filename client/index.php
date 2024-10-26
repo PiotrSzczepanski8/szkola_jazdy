@@ -46,7 +46,7 @@
             <h4>Pomożemy Ci zdobyć prawo jazdy.</h4>
             <section class="main_section">
                 <a href=""><button class="login_submit home_button forward">Wykup kurs</button></a>
-                <a href="login.php"><button class="login_submit home_button forward">Zaloguj się</button></a>
+                <a href="login.php"><button class="login_submit home_button forward" id="login_button">Zaloguj się</button></a>
             </section>
         </main>
     </div>
