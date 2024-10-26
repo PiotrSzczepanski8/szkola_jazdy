@@ -12,7 +12,7 @@
         <header>
             <section>
                 <a href="index.php" class="logotype">
-                    Szkoła Jazdy
+                    LimoAuto
                     <img src="../public/logo.svg" class="logo">
                 </a>
             </section>
@@ -37,6 +37,7 @@
                     <input type="text" name="login">
                     <label for="password">Podaj hasło</label>
                     <input type="password" name="password">
+                    <a href="login.php" class="log_reg">mam już konto &rightarrow;</a>
                     <input class="login_submit" type="submit" value="Potwierdź">
                 </form>
             </section>
