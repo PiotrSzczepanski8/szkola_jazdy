@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
     <link rel="shortcut icon" href="../public/logo.svg" type="image/x-icon">
-    <title>Szkoła jazdy</title>
+    <title>LimoAuto</title>
 </head>
 <body>
     <div class="container">
         <header>
             <section>
                 <a href="index.php" class="logotype">
-                    Szkoła Jazdy
+                    LimoAuto
                     <img src="../public/logo.svg" class="logo">
                 </a>
             </section>

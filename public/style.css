@@ -18,6 +18,7 @@ header{
     font-family: MontserratBold;
     user-select: none;
     position: sticky;
+    top: 0;
 }
 nav{
     display: flex;
@@ -56,21 +57,42 @@ a {
 }
 
 .line_link:hover::before {
-  bottom: 0;
-  height: 100%;
-  background-color: #9dff00;
+    bottom: 0;
+    height: 100%;
+    background-color: #9dff00;
 }
+
 .logout::before{
     background-color: #ff0000d4 !important;
 }
+
 .logout:hover::before{
     background-color: #ff1e1e !important;
 }
 main{
     display: flex;
     justify-content: center;
+    font-family: MontserratBold;
     width: 100%;
     height: 100%;
+}
+.home_page_main h1{
+    display: inline;
+    margin-bottom: 0;
+}
+
+.home_page_main h4{
+    margin-top: .6em;
+}
+.home_page_main{
+    flex-direction: column;
+    align-items: center;
+    justify-content: none;
+}
+.home_page_main h1 p{
+    display: inline;
+    margin: 0;
+    background: linear-gradient(0deg, rgba(157,255,0,1) 0%, rgba(157,255,0,1) 35%, rgba(0,212,255,0) 35%);
 }
 .login_section{
     display: flex;
@@ -150,7 +172,24 @@ input:focus{
     gap: 1em;
 }
 .home_button{
-    width: 15%;
     padding: 1%;
     border-radius: 1em;
+}
+.main_section{
+    width:20%;
+    display: flex;
+    flex-basis: 45%;
+    justify-content: space-around;
+}
+.main_section a{
+    width: 49%;
+}
+.forward{
+    font-size: 0.9em;
+    padding: 9%;
+}
+.log_reg{
+    font-size: 0.9em;
+    color: #1b0075;
+    text-decoration: underline solid 2px#9dff00;
 }

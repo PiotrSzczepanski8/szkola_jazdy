@@ -12,7 +12,7 @@
         <header>
             <section>
                 <a href="../client/index.php" class="logotype">
-                    Szkoła Jazdy
+                    LimoAuto
                     <img src="../public/logo.svg" class="logo">
                 </a>
             </section>

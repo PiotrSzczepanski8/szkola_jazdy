@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
     <link rel="shortcut icon" href="../public/logo.svg" type="image/x-icon">
-    <title>Szkoła jazdy</title>
+    <title>LimoAuto</title>
 </head>
 <body>
     <div class="container">
         <header>
             <section>
                 <a href="index.php" class="logotype">
-                    Szkoła Jazdy
+                    LimoAuto
                     <img src="../public/logo.svg" class="logo">
                 </a>
             </section> 
@@ -41,17 +41,14 @@
                 ?>
             </nav>
         </header>
-        <main>
-            <section class="home_login" id="home">
-                <h1>Kup kurs już dzisiaj!</h1>
-                    <a class="login_submit home_button"  href="register.php">zarejestruj się</a>
-                    <a class="login_submit home_button" href="login.php">zaloguj się</a>
-            </section>
-            <section class="tables">
-                
+        <main class="home_page_main">
+            <h1>Prowadź bezpiecznie, prowadź z <p>LimoAuto!</p></h1>
+            <h4>Pomożemy Ci zdobyć prawo jazdy.</h4>
+            <section class="main_section">
+                <a href=""><button class="login_submit home_button forward">Wykup kurs</button></a>
+                <a href="login.php"><button class="login_submit home_button forward">Zaloguj się</button></a>
             </section>
         </main>
     </div>
-    <script src="../js/open.js"></script>
 </body>
 </html>
