@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if(isset($_SESSION['login'])){
+        header("Location: index.php");
+    }
+    
     require_once("../config/connection.php");
 
     if($_SERVER['REQUEST_METHOD'] === "POST"){

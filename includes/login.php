@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if(isset($_SESSION['typ_pracownika'])){
         header("Location: ../admin/index.php");
     }else if(isset($_SESSION['login'])){
@@ -19,7 +20,7 @@
 
         if(mysqli_num_rows($result) > 0){
             $logged = true;
-            session_start();
+            // session_start();
             $_SESSION['logged'] = $logged;
             $_SESSION['login'] = $login;
             $_SESSION['name'] = $row['imie'];
@@ -35,7 +36,7 @@
 
         if(mysqli_num_rows($result) > 0){
             $logged = true;
-            session_start();
+            // session_start();
             $_SESSION['logged'] = $logged;
             $_SESSION['login'] = $login;
             header("Location: ../client/index.php");
