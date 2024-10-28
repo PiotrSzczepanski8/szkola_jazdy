@@ -1,6 +1,6 @@
 <?php
     if(isset($_SESSION['typ_pracownika'])){
-        header("Location: ../admin/index.php")
+        header("Location: ../admin/index.php");
     }else if(isset($_SESSION['login'])){
         header("Location: ../client/index.php");
     }
