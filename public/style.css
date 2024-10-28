@@ -100,6 +100,7 @@ main{
     align-items: center;
     font-family: MontserratBold;
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 .login_section h3{
     width: 90%;
