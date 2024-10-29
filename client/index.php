@@ -20,7 +20,7 @@
                 <?php
                     require("../includes/login.php");
                     $logged = false;
-                    session_start();
+                    // session_start();
                     if(isset($_SESSION['logged'])){
                         $logged = $_SESSION['logged'];
                     }
