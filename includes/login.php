@@ -2,8 +2,10 @@
     session_start();
     if(isset($_SESSION['typ_pracownika'])){
         header("Location: ../admin/index.php");
+        exit();
     }else if(isset($_SESSION['login'])){
         header("Location: ../client/index.php");
+        exit();
     }
 
     require_once("../config/connection.php");
@@ -40,8 +42,10 @@
             $_SESSION['logged'] = $logged;
             $_SESSION['login'] = $login;
             header("Location: ../client/index.php");
+            exit();
         }else{
             header("Location: ../public/login_failed.php");
+            exit();
         }
     }
 
