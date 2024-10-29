@@ -18,9 +18,10 @@
             </section> 
             <nav>
                 <?php
-                    require("../includes/login.php");
+                    // require("../includes/login.php");
+                    require_once "../config/connection.php";
                     $logged = false;
-                    // session_start();
+                    session_start();
                     if(isset($_SESSION['logged'])){
                         $logged = $_SESSION['logged'];
                     }
@@ -41,17 +42,22 @@
                 ?>
             </nav>
         </header>
-        <main class="home_page_main">
+        <main class="store_main">
             <?php
                 $query = "SELECT kategoria, opis from kurs;";
                 $result = mysqli_query($conn, $query);
-                $rows = mysqli_fetch_all($result);
+                $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 
-                for ($i=0; $i < mysqli_num_rows($result); $i++) { 
-                    
+                foreach($rows as $row){ 
+                    echo "<section class='store_section'>";
+                    echo "<h1 class='cool_underline'>".$row['kategoria']."</h1>";
+                    echo "<p class='description'>".$row['opis']."</p>";
+                    echo "<a href=''><button>Kup kurs</button></a>";
+                    echo "</section>";
                 }
             ?>
         </main>
     </div>
+    <script src="../public/text_cutter.js" defer></script>
 </body>
 </html>

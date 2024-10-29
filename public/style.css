@@ -94,6 +94,54 @@ main{
     margin: 0;
     background: linear-gradient(0deg, rgba(157,255,0,1) 0%, rgba(157,255,0,1) 35%, rgba(0,212,255,0) 35%);
 }
+.cool_underline{
+    background: linear-gradient(0deg, rgba(157,255,0,1) 0%, rgba(157,255,0,1) 35%, rgba(0,212,255,0) 35%);
+}
+.description{
+    max-height: 110%;
+    margin: 2% 10% 15% 10%;
+}
+.store_main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1%;
+}
+.store_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* box-sizing: border-box; */
+    /* padding: 1%; */
+    margin-top: 1.5%;
+    border: #9dff00 5px solid;
+    flex-basis: 12%;
+    border-radius: 2em;
+}
+.store_section h1{
+    width: fit-content;
+    color: #1b0075;
+    margin: 2% 0 0 10%;
+}
+.store_section button{
+    cursor: pointer;
+    border: none;
+    height: 2em;
+    width: 100%;
+    border-radius: 0 0 2em 2em;
+    outline: #1b0075 5px solid;
+    background-color: #1b0075;
+    color: #fff;
+    font-family: MontserratBold;
+    transition: 0.5s;
+}
+
+.store_section button:hover{
+    background-color: #9dff00;
+    outline: #9dff00 5px solid;
+    color: #000;
+    transition: 0.5s;
+}
 .login_section{
     display: flex;
     flex-direction: column;
