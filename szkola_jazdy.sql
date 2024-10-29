@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Paź 2024, 17:22
--- Wersja serwera: 10.4.24-MariaDB
--- Wersja PHP: 8.1.6
+-- Generation Time: Paź 29, 2024 at 09:26 AM
+-- Wersja serwera: 10.4.28-MariaDB
+-- Wersja PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `szkola_jazdy`
+-- Database: `szkola_jazdy`
 --
 
 -- --------------------------------------------------------
@@ -29,8 +29,29 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kurs` (
   `id_kurs` int(11) NOT NULL,
-  `kategoria` enum('A','B','C','D','E') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `kategoria` varchar(4) DEFAULT NULL,
+  `opis` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kurs`
+--
+
+INSERT INTO `kurs` (`id_kurs`, `kategoria`, `opis`) VALUES
+(1, 'A', 'Dzięki temu rodzajowi prawa jazdy będziesz mógł poruszać się każdym jednośladem bez względu na pojemność czy moc silnika'),
+(2, 'B', 'Prawo jazdy kategorii B pozwoli Ci prowadzić samochody osobowe, minibusy i kempingi.'),
+(3, 'C', 'Kategoria C jest dla Ciebie jeśli chcesz prowadzić samochody ciężarowe'),
+(4, 'D', 'Dzieki kategorii D będziesz mógł prowadzić autobusy.'),
+(5, 'B+E', 'B+E to rozszerzenie kategorii B, które pozwala na prowadzenie pojazdów o większej ładowności.'),
+(6, 'C+E', 'Kategoria C+E to rozszerzenie kategorii C, które pozwala Ci prowadzić zespół pojazdów bez żadnych limitów wagowych.'),
+(7, 'D+E', 'Dzięki temu rozszerzeniu kategorii D, możesz prowadzić autobusy z przyczepą bez ograniczeń tonażowych.'),
+(8, 'A1', 'Dzięki temu rodzajowi prawa jazdy będziesz mógł prowadzić jednoślad, jednak o mniejszej mocy i pojemności silnika niż w kategorii A.'),
+(9, 'B1', 'Kategoria B1 uprawnia Cię do kierowania małym samochodem osobowym rozpędzającym się do 100km/h.'),
+(10, 'C1', 'Prawo jazdy kategorii C1 uprawnia Cię do kierowania pojazdami ciężarowymi, których waga nie przekracza 7,5 tony.'),
+(11, 'D1', 'Prawo jazdy ketegorii D1 pozwala Ci prowadzić autobusy o długości do 8 metrów'),
+(12, 'C1+E', 'Kategoria C1+E uprawnia Cię do kierowania mniejszymi ciężarówkami z przyczepą.'),
+(13, 'D1+E', 'Kategoria D1+E uprawnia Cię do kierowania zespołem pojazdów (pojazd ciągnący i przyczepa) o wadze nie przekraczającej 12t.'),
+(14, 'T', 'Kategoria T uprawnia Cię do kierowania traktorem.');
 
 -- --------------------------------------------------------
 
@@ -46,7 +67,7 @@ CREATE TABLE `kursant` (
   `email` varchar(100) NOT NULL,
   `haslo` varchar(100) NOT NULL,
   `login` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -63,7 +84,7 @@ CREATE TABLE `lekcja` (
   `godzina` time NOT NULL,
   `id_samochod` int(11) DEFAULT NULL,
   `temat_lekcji` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -83,7 +104,7 @@ CREATE TABLE `pracownik` (
   `login` varchar(50) NOT NULL,
   `haslo` varchar(100) NOT NULL,
   `typ_pracownika` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -97,7 +118,7 @@ CREATE TABLE `samochod` (
   `model` varchar(30) NOT NULL,
   `numer_rejestracyjny` varchar(8) NOT NULL,
   `stan` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -111,7 +132,7 @@ CREATE TABLE `transakcja` (
   `id_kurs` int(11) DEFAULT NULL,
   `data_transakcji` date NOT NULL,
   `cena` decimal(7,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -124,7 +145,7 @@ CREATE TABLE `wyplata` (
   `kwota` decimal(7,2) NOT NULL,
   `id_instruktor` int(11) NOT NULL,
   `data_wyplaty` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -184,57 +205,57 @@ ALTER TABLE `wyplata`
   ADD KEY `id_instruktor` (`id_instruktor`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT dla tabeli `kurs`
+-- AUTO_INCREMENT for table `kurs`
 --
 ALTER TABLE `kurs`
-  MODIFY `id_kurs` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kurs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT dla tabeli `kursant`
+-- AUTO_INCREMENT for table `kursant`
 --
 ALTER TABLE `kursant`
   MODIFY `id_kursant` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `lekcja`
+-- AUTO_INCREMENT for table `lekcja`
 --
 ALTER TABLE `lekcja`
   MODIFY `id_lekcja` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `pracownik`
+-- AUTO_INCREMENT for table `pracownik`
 --
 ALTER TABLE `pracownik`
   MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `samochod`
+-- AUTO_INCREMENT for table `samochod`
 --
 ALTER TABLE `samochod`
   MODIFY `id_samochod` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `transakcja`
+-- AUTO_INCREMENT for table `transakcja`
 --
 ALTER TABLE `transakcja`
   MODIFY `id_transakcja` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `wyplata`
+-- AUTO_INCREMENT for table `wyplata`
 --
 ALTER TABLE `wyplata`
   MODIFY `id_wyplata` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Ograniczenia dla zrzutów tabel
+-- Constraints for dumped tables
 --
 
 --
--- Ograniczenia dla tabeli `lekcja`
+-- Constraints for table `lekcja`
 --
 ALTER TABLE `lekcja`
   ADD CONSTRAINT `lekcja_ibfk_1` FOREIGN KEY (`id_kursant`) REFERENCES `kursant` (`id_kursant`),
@@ -243,14 +264,14 @@ ALTER TABLE `lekcja`
   ADD CONSTRAINT `lekcja_ibfk_4` FOREIGN KEY (`id_samochod`) REFERENCES `samochod` (`id_samochod`);
 
 --
--- Ograniczenia dla tabeli `transakcja`
+-- Constraints for table `transakcja`
 --
 ALTER TABLE `transakcja`
   ADD CONSTRAINT `transakcja_ibfk_1` FOREIGN KEY (`id_kursant`) REFERENCES `kursant` (`id_kursant`),
   ADD CONSTRAINT `transakcja_ibfk_2` FOREIGN KEY (`id_kurs`) REFERENCES `kurs` (`id_kurs`);
 
 --
--- Ograniczenia dla tabeli `wyplata`
+-- Constraints for table `wyplata`
 --
 ALTER TABLE `wyplata`
   ADD CONSTRAINT `wyplata_ibfk_1` FOREIGN KEY (`id_instruktor`) REFERENCES `pracownik` (`id_pracownik`);
