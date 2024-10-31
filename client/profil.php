@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: index.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -18,7 +25,7 @@
             </section>
             <nav>
                 <?php
-                    session_start();
+                    // session_start();
                     if(isset($_SESSION['login'])){
                         $login = $_SESSION['login'];
                         echo $login;

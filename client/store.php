@@ -44,7 +44,7 @@
         </header>
         <main class="store_main">
             <?php
-                $query = "SELECT kategoria, opis from kurs;";
+                $query = "SELECT * from kurs;";
                 $result = mysqli_query($conn, $query);
                 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 
@@ -52,7 +52,7 @@
                     echo "<section class='store_section'>";
                     echo "<h1 class='cool_underline'>".$row['kategoria']."</h1>";
                     echo "<p class='description'>".$row['opis']."</p>";
-                    echo "<a href=''><button>Kup kurs</button></a>";
+                    echo "<a href='purchase.php?id=".$row['id_kurs']."'><button>Kup kurs</button></a>";
                     echo "</section>";
                 }
             ?>
