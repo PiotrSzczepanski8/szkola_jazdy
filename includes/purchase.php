@@ -25,7 +25,8 @@
         $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
         $client_id = $row[0]['id_kursant'];
         $curr_date = date("Y-m-d");
-        $query = "INSERT INTO transakcje(id_kurs, id_kursant, data_transakcji) VALUES('$product_id', '$client_id', '$curr_date');";
+        $query = "INSERT INTO transakcja(id_kurs, id_kursant, data_transakcji) VALUES('$product_id', '$client_id', '$curr_date');";
+        mysqli_query($conn, $query);
         echo "Zakup zakończony powodzeniem.";
         exit();
     }else{
