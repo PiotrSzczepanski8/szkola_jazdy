@@ -136,6 +136,7 @@ main{
     font-family: MontserratBold;
     transition: 0.5s;
     user-select: none;
+    /* margin-bottom: -2%; */
 }
 
 .store_section button:hover{
@@ -267,4 +268,14 @@ input:focus{
 
 .product_caption{
     display: flex;
+}
+
+.profile_main{
+    flex-direction: column;
+    align-items: center;
+}
+summary{
+    user-select: none;
+    cursor: pointer;
+    font-size: 1.5em;
 }

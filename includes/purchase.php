@@ -15,6 +15,8 @@
         $kategoria = $row[0]['kategoria'];
         $opis = $row[0]['opis'];
         $cena = $row[0]['cena'];
+        $h_pr = $row[0]['h_praktyka'];
+        $h_te = $row[0]['h_teoria'];
         // echo $kategoria, $cena;
     }else if(!isset($_POST['kurs_id'])){
         if(isset($_SESSION['product_id'])){
@@ -48,9 +50,19 @@
                     echo $opis;
                 ?>
             </p>
-            <p class="cool_underline" style="margin-left: 50%; width: fit-content">
+            <p class="cool_underline" style="width: fit-content">
                 <?php
-                    echo $cena." zł.";
+                    echo "ilość zajęć praktycznych: ".$h_pr."h";
+                ?>
+            </p>
+            <p class="cool_underline" style="width: fit-content">
+                <?php
+                    echo "ilość zajęć teoretycznych: ".$h_te."h";
+                ?>
+            </p>
+            <p class="cool_underline" style="width: fit-content">
+                <?php
+                    echo "cena: ".$cena." zł.";
                 ?>
             </p>
             <input type="text" name="id_kurs" value="<?php echo $product_id; ?>" style="display: none;">
