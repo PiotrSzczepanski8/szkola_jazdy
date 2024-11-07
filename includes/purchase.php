@@ -29,6 +29,9 @@
         $curr_date = date("Y-m-d");
         $query = "INSERT INTO transakcja(id_kurs, id_kursant, data_transakcji) VALUES('$product_id', '$client_id', '$curr_date');";
         mysqli_query($conn, $query);
+
+        // do zrobienia: algorytm automatycznego generowania danych lekcji dla kursu zakupionego przez użytkownika
+
         echo "Zakup zakończony powodzeniem.";
         exit();
     }else{
@@ -50,12 +53,13 @@
                     echo $opis;
                 ?>
             </p>
-            <p class="cool_underline" style="width: fit-content">
+            <p class="cool_underline" style="width: fit-content; display: inline;">
                 <?php
                     echo "ilość zajęć praktycznych: ".$h_pr."h";
                 ?>
             </p>
-            <p class="cool_underline" style="width: fit-content">
+            <br> <br>
+            <p class="cool_underline" style="width: fit-content; display: inline;">
                 <?php
                     echo "ilość zajęć teoretycznych: ".$h_te."h";
                 ?>
