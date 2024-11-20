@@ -3,6 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+-- Czas generowania: 20 Lis 2024, 20:41
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -124,7 +125,10 @@ CREATE TABLE `pracownik` (
 --
 
 INSERT INTO `pracownik` (`id_pracownik`, `imie`, `nazwisko`, `telefon`, `email`, `miasto`, `ulica`, `nr_lokalu`, `login`, `haslo`, `typ_pracownika`) VALUES
-(1, 'Karol', 'Robak', '48+ 667 887 123', 'karolrobak112@rak.pl', 'Kraków', 'Wodna', '7', 'admin', 'trudneHaslo123#', 'admin');
+(1, 'Karol', 'Robak', '48+ 667 887 123', 'karolrobak112@rak.pl', 'Kraków', 'Wodna', '7', 'admin', 'trudneHaslo123#', 'admin'),
+(2, 'Marta', 'Koralowa', '48+ 567 874 123', 'martakoralowa@koral.pl', 'Poznań', 'Rolnicza', '9', 'in_marta.k', 'kochamPieskiUwU', 'instruktor'),
+(3, 'Kamil', 'Ślimak', '+48 934 567 999', 'kamil@slimak.palindrom.pl', 'Rybnik', 'Koziołkowska', '37', 'kamilślimak', 'jestemWolny!', 'instruktor'),
+(4, 'Barbara', 'Grom', '+48 567 321 123', 'basiagrom@gmail.com', 'Warszawa', 'Długa', '19/4', 'baśkaInstruktorka', 'Pimpuś2019!', 'instruktor');
 
 -- --------------------------------------------------------
 
@@ -165,7 +169,8 @@ CREATE TABLE `transakcja` (
 --
 
 INSERT INTO `transakcja` (`id_transakcja`, `id_kursant`, `id_kurs`, `data_transakcji`) VALUES
-(1, 1, 3, '2024-10-31');
+(1, 1, 3, '2024-10-31'),
+(2, 1, 4, '2024-11-07');
 
 -- --------------------------------------------------------
 
@@ -263,7 +268,7 @@ ALTER TABLE `lekcja`
 -- AUTO_INCREMENT dla tabeli `pracownik`
 --
 ALTER TABLE `pracownik`
-  MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `samochod`
@@ -275,7 +280,7 @@ ALTER TABLE `samochod`
 -- AUTO_INCREMENT dla tabeli `transakcja`
 --
 ALTER TABLE `transakcja`
-  MODIFY `id_transakcja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_transakcja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `wyplata`
