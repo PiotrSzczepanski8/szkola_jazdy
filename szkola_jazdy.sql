@@ -3,7 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 02 Lis 2024, 12:10
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -141,6 +140,13 @@ CREATE TABLE `samochod` (
   `stan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `samochod`
+--
+
+INSERT INTO `samochod` (`id_samochod`, `marka`, `model`, `numer_rejestracyjny`, `stan`) VALUES
+(1, 'Toyota', 'Yaris', 'SG9978A', 'dostępny');
+
 -- --------------------------------------------------------
 
 --
@@ -263,7 +269,7 @@ ALTER TABLE `pracownik`
 -- AUTO_INCREMENT dla tabeli `samochod`
 --
 ALTER TABLE `samochod`
-  MODIFY `id_samochod` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_samochod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `transakcja`

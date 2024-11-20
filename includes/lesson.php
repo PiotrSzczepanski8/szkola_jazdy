@@ -55,13 +55,40 @@
 
     echo $lesson_interval;
 
-    for($i = 0; $i < $h_te; $i += $lesson_interval){
-        $lesson = new DateTime($course_start);
-        $course_start->modify("+1 day");
-        $course_start = $course_start->format('Y-m-d');
+    $lesson_date = $course_start;
+    for($i = 0; $i < $h_te; $i++){
+        $lesson_date = new DateTime($lesson_date);
+        if($lesson_date->format("l") == "Saturday" or $lesson_date->format("l") == "Sunday"){
+            $lesson_date->modify("-3 days");
+            $lesson_date = $lesson_date->format("Y-m-d, l");
+            echo "<br>".($i+1).") ".$lesson_date;
+            $lesson_date = new DateTime($lesson_date);
+            $lesson_date->modify("+3 days");
+            $lesson_date = $lesson_date->format("Y-m-d");
+        }else{
+            $lesson_date = $lesson_date->format("Y-m-d, l");
+            echo "<br>".($i+1).") ".$lesson_date;
+        }
+        $lesson_date = new DateTime($lesson_date);
+        $lesson_date->modify("+$lesson_interval days");
+        $lesson_date = $lesson_date->format("Y-m-d");
     }
 
-    for($i = 0; $i < $h_te; $i += $lesson_interval){
-        
+    for($i = 0; $i < $h_pr; $i++){
+        $lesson_date = new DateTime($lesson_date);
+        if($lesson_date->format("l") == "Saturday" or $lesson_date->format("l") == "Sunday"){
+            $lesson_date->modify("-3 days");
+            $lesson_date = $lesson_date->format("Y-m-d, l");
+            echo "<br>".($i+1).") ".$lesson_date;
+            $lesson_date = new DateTime($lesson_date);
+            $lesson_date->modify("+3 days");
+            $lesson_date = $lesson_date->format("Y-m-d");
+        }else{
+            $lesson_date = $lesson_date->format("Y-m-d, l");
+            echo "<br>".($i+1).") ".$lesson_date;
+        }
+        $lesson_date = new DateTime($lesson_date);
+        $lesson_date->modify("+$lesson_interval days");
+        $lesson_date = $lesson_date->format("Y-m-d");
     }
 ?>
