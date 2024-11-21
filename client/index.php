@@ -9,37 +9,9 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <section>
-                <a href="index.php" class="logotype">
-                    LimoAuto
-                    <img src="../public/logo.svg" class="logo">
-                </a>
-            </section> 
-            <nav>
-                <?php
-                    $logged = false;
-                    session_start();
-                    if(isset($_SESSION['logged'])){
-                        $logged = $_SESSION['logged'];
-                    }
-                    
-                    if(isset($_SESSION['login'])){
-                        $login = $_SESSION['login'];
-                    }
-
-                    if($logged == false){
-                        echo "<a href='login.php' class='line_link'>zaloguj się</a>";
-                        echo "<a href='register.php' class='line_link'>zarejestruj się</a>";
-                    }else{
-                        echo $login;
-                        echo "<a href='profil.php' class='line_link'>profil</a>";
-                        echo "<a href='../public/logout.php' class='line_link logout'>wyloguj</a>";
-                    }
-                
-                ?>
-            </nav>
-        </header>
+        <?php
+            include "../public/components/header.shtml";
+        ?>
         <main class="home_page_main">
             <h1>Prowadź bezpiecznie, prowadź z <p>LimoAuto!</p></h1>
             <h4>Pomożemy Ci zdobyć prawo jazdy.</h4>
@@ -89,12 +61,9 @@
             ?>
             </section>
         </main>
-        <footer>
-            <a href="index.php" class="logotype">
-                &copy; 2024 LimoAuto
-                <img src="../public/logo.svg" class="logo">
-            </a>
-        </footer>
+        <?php
+            include "../public/components/footer.shtml";
+        ?>
     </div>
     <script src="../public/scroll.js" defer></script>
 </body>

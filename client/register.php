@@ -49,6 +49,9 @@
                 </form>
             </section>
         </main>
+        <?php
+            include "../public/components/footer.shtml";
+        ?>
     </div>
 </body>
 </html>

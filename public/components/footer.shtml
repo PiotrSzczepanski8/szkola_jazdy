@@ -1,0 +1,6 @@
+<footer>
+    <a href="index.php" class="logotype">
+        &copy; 2024 LimoAuto
+        <img src="../public/logo.svg" class="logo">
+    </a>
+</footer>

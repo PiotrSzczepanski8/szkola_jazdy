@@ -57,6 +57,9 @@
             }
             ?>
         </main>
+        <?php
+            include "../public/components/footer.shtml";
+        ?>
     </div>
     <script src="../public/text_cutter.js" defer></script>
 </body>
