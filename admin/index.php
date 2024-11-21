@@ -31,7 +31,6 @@
         <main>
             <section class="home_login" id="home">
                 <?php
-                    // session_start();
                     if(isset($_SESSION['user_type'])){
                         $user_type = $_SESSION['user_type'];
                         if($user_type == "admin"){

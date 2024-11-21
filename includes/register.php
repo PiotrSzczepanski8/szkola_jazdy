@@ -17,7 +17,6 @@
         $query = "SELECT * FROM kursant WHERE login='$login' or email='$email' or telefon='$phone';";
 
         $result = mysqli_query($conn, $query);
-        //$row = mysqli_fetch_assoc($query);
 
         if(mysqli_num_rows($result) > 0){
 

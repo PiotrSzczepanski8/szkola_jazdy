@@ -11,7 +11,6 @@
         $product_id = $_SESSION['product_id'];
     }
 
-
     $course_start = new DateTime(date("Y-m-d"));
     $course_start->modify("+1 day");
     $course_start = $course_start->format('Y-m-d');
@@ -20,11 +19,6 @@
     $course_end->modify("+3 months");
     $course_end = $course_end->format('Y-m-d');
 
-    
-    // dodawanie kolejnych dni
-    // $course_start = new DateTime($course_start);
-    // $course_start->modify("+1 day");
-    // $course_start = $course_start->format('Y-m-d');
     $course_duration = (strtotime($course_end) - strtotime($course_start)) / (60 * 60 * 24);
 
     $query = "SELECT * FROM kursant WHERE login = '$login';";

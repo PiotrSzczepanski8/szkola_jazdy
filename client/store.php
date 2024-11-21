@@ -18,7 +18,6 @@
             </section> 
             <nav>
                 <?php
-                    // require("../includes/login.php");
                     require_once "../config/connection.php";
                     $logged = false;
                     session_start();
