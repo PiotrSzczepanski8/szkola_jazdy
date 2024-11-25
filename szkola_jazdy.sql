@@ -3,6 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+-- Czas generowania: 26 Lis 2024, 08:35
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -71,7 +72,7 @@ CREATE TABLE `kursant` (
   `email` varchar(100) NOT NULL,
   `haslo` varchar(100) NOT NULL,
   `login` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Zrzut danych tabeli `kursant`
@@ -119,15 +120,15 @@ CREATE TABLE `pracownik` (
   `login` varchar(50) NOT NULL,
   `haslo` varchar(100) NOT NULL,
   `typ_pracownika` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Zrzut danych tabeli `pracownik`
 --
 
 INSERT INTO `pracownik` (`id_pracownik`, `imie`, `nazwisko`, `telefon`, `email`, `miasto`, `ulica`, `nr_lokalu`, `login`, `haslo`, `typ_pracownika`) VALUES
-(1, 'Karol', 'Robak', '48+ 667 887 123', 'karolrobak112@rak.pl', 'Kraków', 'Wodna', '7', 'admin', 'trudneHaslo123#', 'admin'),
-(2, 'Marta', 'Koralowa', '48+ 567 874 123', 'martakoralowa@koral.pl', 'Poznań', 'Rolnicza', '9', 'in_marta.k', 'kochamPieskiUwU', 'instruktor'),
+(1, 'Karol', 'Robak', '+48 667 887 123', 'karolrobak112@rak.pl', 'Kraków', 'Wodna', '7', 'admin', 'trudneHaslo123#', 'admin'),
+(2, 'Marta', 'Koralowa', '+48 567 874 123', 'martakoralowa@koral.pl', 'Poznań', 'Rolnicza', '9', 'in_marta.k', 'kochamPieskiUwU', 'instruktor'),
 (3, 'Kamil', 'Ślimak', '+48 934 567 999', 'kamil@slimak.palindrom.pl', 'Rybnik', 'Koziołkowska', '37', 'kamilślimak', 'jestemWolny!', 'instruktor'),
 (4, 'Barbara', 'Grom', '+48 567 321 123', 'basiagrom@gmail.com', 'Warszawa', 'Długa', '19/4', 'baśkaInstruktorka', 'Pimpuś2019!', 'instruktor'),
 (5, 'Krzysztof', 'Rączka', '+48 876 871 002', 'pan@krzysztof.pl', 'Mikołów', 'Robotnicza', '7/8', 'krzy88', 'krzysiuMisiu88', 'instruktor');
@@ -258,7 +259,7 @@ ALTER TABLE `kurs`
 -- AUTO_INCREMENT dla tabeli `kursant`
 --
 ALTER TABLE `kursant`
-  MODIFY `id_kursant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_kursant` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `lekcja`
@@ -270,7 +271,7 @@ ALTER TABLE `lekcja`
 -- AUTO_INCREMENT dla tabeli `pracownik`
 --
 ALTER TABLE `pracownik`
-  MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `samochod`

@@ -1,7 +1,7 @@
-const scrollContainers = document.querySelectorAll('.products_overview'); // Pobieramy wszystkie kontenery
+const scrollContainers = document.querySelectorAll('.products_overview');
 
 scrollContainers.forEach(scrollContainer => {
-    let isDown = false; // Lokalny stan dla tego kontenera
+    let isDown = false;
     let startX;
     let scrollLeft;
 
@@ -29,7 +29,7 @@ scrollContainers.forEach(scrollContainer => {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - scrollContainer.offsetLeft;
-        const walk = (x - startX); // Przesunięcie
+        const walk = (x - startX);
         scrollContainer.scrollLeft = scrollLeft - walk;
     });
 });

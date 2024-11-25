@@ -68,7 +68,7 @@
                     for($i = 0; $i < $ilosc_kursow; $i++){
                         echo "<details>";
                         echo '<summary class="cool_underline" style="width: fit-content;">';
-                        echo $kurs[$i]['kategoria'];
+                        echo "Kategoria ".$kurs[$i]['kategoria'];
                         echo "</summary>";
 
                         $query = "SELECT * FROM lekcja inner join kursant on kursant.id_kursant = lekcja.id_kursant where kursant.login like '$login';";
