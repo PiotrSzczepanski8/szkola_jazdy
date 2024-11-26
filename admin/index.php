@@ -18,6 +18,9 @@
             </section>
             <nav>
                 <?php
+
+                    require_once "../config/connection.php";
+
                     session_start();
                     if(isset($_SESSION['name']) && isset($_SESSION['surname'])){
                         $imie = $_SESSION['name'];
@@ -35,8 +38,37 @@
                         $user_type = $_SESSION['user_type'];
                         if($user_type == "admin"){
 
+                            $query = "SHOW TABLES FROM szkola_jazdy;";
+
+                            $result = mysqli_query($conn, $query);
+                            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+                            foreach ($rows as $row => $val){
+                                $table = $val['Tables_in_szkola_jazdy'];
+                                
+                                $query = "SELECT * FROM $table;";
+                                
+                                $result = mysqli_query($conn, $query);
+                                $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+                                echo "<h3>$table</h3>";
+
+                                echo "<table>";
+                                $i = 1;
+                                foreach ($rows as $row => $val){
+                                    echo '<tr>';
+                                    foreach ($val as $key => $value) {
+                                        echo "<td>".$value."</td>";
+                                    }
+                                    echo "<td><button id='e$i'>Edytuj</button></td>";
+                                    echo "<td><button id='u$i'>Usuń</button></td>";
+                                    echo '</tr>';
+                                    $i++;
+                                }
+                                echo "</table>";
+                            }
                         }else{
-                            
+
                         }
                     }
 
