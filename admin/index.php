@@ -51,9 +51,19 @@
                                 $result = mysqli_query($conn, $query);
                                 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+                                // print_r($rows);
+
                                 echo "<h3>$table</h3>";
 
                                 echo "<table>";
+                                echo "<thead><tr>";
+                                if(mysqli_num_rows($result) > 0){
+                                    foreach(array_keys($rows[0]) as $header){
+                                        echo "<th>$header</th>";
+                                    }
+                                }
+                                echo "</tr></thead>";
+                                echo "<tbody>";
                                 $i = 1;
                                 foreach ($rows as $row => $val){
                                     echo '<tr>';
@@ -65,6 +75,7 @@
                                     echo '</tr>';
                                     $i++;
                                 }
+                                echo "</tbody>";
                                 echo "</table>";
                             }
                         }else{
