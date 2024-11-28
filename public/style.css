@@ -357,3 +357,23 @@ footer{
     font-size: 1.2em;
     background-color: #1b0075;
 }
+
+.table_button{
+    font-size: 0.8em;
+    padding: 0.3em;
+}
+
+table{
+    width: 80%;
+}
+td, th{
+    width: fit-content;
+    border: 1px solid #000;
+    padding: 0;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.table_none_border{
+    border: none;
+}

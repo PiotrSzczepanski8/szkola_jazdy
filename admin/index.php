@@ -51,9 +51,7 @@
                                 $result = mysqli_query($conn, $query);
                                 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-                                // print_r($rows);
-
-                                echo "<h3>$table</h3>";
+                                echo "<h3 class='cool_underline'>$table</h3>";
 
                                 echo "<table>";
                                 echo "<thead><tr>";
@@ -61,6 +59,8 @@
                                     foreach(array_keys($rows[0]) as $header){
                                         echo "<th>$header</th>";
                                     }
+                                }else{
+                                    echo "w tej tabeli nie ma danych";
                                 }
                                 echo "</tr></thead>";
                                 echo "<tbody>";
@@ -70,8 +70,8 @@
                                     foreach ($val as $key => $value) {
                                         echo "<td>".$value."</td>";
                                     }
-                                    echo "<td><button id='e$i'>Edytuj</button></td>";
-                                    echo "<td><button id='u$i'>Usuń</button></td>";
+                                    echo "<td class='table_none_border'><button id='$table-e$i' class='login_submit home_button table_button'>Edytuj</button></td>";
+                                    echo "<td class='table_none_border'><button id='$table-u$i' class='login_submit home_button table_button'>Usuń</button></td>";
                                     echo '</tr>';
                                     $i++;
                                 }
