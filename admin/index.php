@@ -71,7 +71,7 @@
                                         echo "<td>".$value."</td>";
                                     }
                                     echo "<td class='table_none_border'><button id='$table-e$i' class='login_submit home_button table_button'>Edytuj</button></td>";
-                                    echo "<td class='table_none_border'><button id='$table-u$i' class='login_submit home_button table_button'>Usuń</button></td>";
+                                    echo "<td class='table_none_border'><button class='login_submit home_button table_button' onClick='deleteRow(\"$table\", \"$i\")'>Usuń</button></td>";
                                     echo '</tr>';
                                     $i++;
                                 }
@@ -90,5 +90,6 @@
             </section>
         </main>
     </div>
+    <script src='../public/forward.js' defer></script>
 </body>
 </html>
