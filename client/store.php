@@ -9,38 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <section>
-                <a href="index.php" class="logotype">
-                    LimoAuto
-                    <img src="../public/logo.svg" class="logo">
-                </a>
-            </section> 
-            <nav>
-                <?php
-                    require_once "../config/connection.php";
-                    $logged = false;
-                    session_start();
-                    if(isset($_SESSION['logged'])){
-                        $logged = $_SESSION['logged'];
-                    }
-                    
-                    if(isset($_SESSION['login'])){
-                        $login = $_SESSION['login'];
-                    }
-
-                    if($logged == false){
-                        echo "<a href='login.php' class='line_link'>zaloguj się</a>";
-                        echo "<a href='register.php' class='line_link'>zarejestruj się</a>";
-                    }else{
-                        echo $login;
-                        echo "<a href='profil.php' class='line_link'>profil</a>";
-                        echo "<a href='../public/logout.php' class='line_link logout'>wyloguj</a>";
-                    }
-                
-                ?>
-            </nav>
-        </header>
+        <?php
+            include "../public/components/header.shtml";
+            require_once "../config/connection.php";
+        ?>
         <main class="store_main">
             <?php
                 $query = "SELECT * from kurs;";
@@ -51,7 +23,7 @@
                     echo "<section class='store_section'>";
                     echo "<h1 class='cool_underline'>".$row['kategoria']."</h1>";
                     echo "<p class='description'>".$row['opis']."</p>";
-                    echo "<a href='purchase.php?id=".$row['id_kurs']."'><button>Kup kurs</button></a>";
+                    echo "<a href='course-preview.php?id=".$row['id_kurs']."'><button>Kup kurs</button></a>";
                     echo "</section>";
                 }
             ?>

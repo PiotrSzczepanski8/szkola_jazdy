@@ -7,22 +7,19 @@
     <link rel="shortcut icon" href="../public/logo.svg" type="image/x-icon">
     <title>LimoAuto</title>
 </head>
-<body>
-    <div class="container">
-        <?php
+<body class='main-page'>
+    <?php
             include "../public/components/header.shtml";
-        ?>
-        <main class="home_page_main">
-            <h1>Prowadź bezpiecznie, prowadź z <p>LimoAuto!</p></h1>
-            <h4>Pomożemy Ci zdobyć prawo jazdy.</h4>
-            <section class="main_section">
-                <a href="store.php"><button class="login_submit home_button forward">Wykup kurs</button></a>
-                <?php
-                    if(!isset($_SESSION['login'])){
-                        echo '<a href="login.php"><button class="login_submit home_button forward" id="login_button">Zaloguj się</button></a>';
-                    }
-                ?>
-            </section>
+            ?>
+            <div class="slides">
+                <div class="slider-background">
+                    <h1>Prowadź bezpiecznie, prowadź z <span>LimoAuto!</span></h1>
+                    <a href="store.php" class="see-more-button">sprawdź kursy
+                        <img src="../public/images/icons/arrow-right.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="container">
             <hr>
             <section class="main_secondary">
                 <h2>Kursy na <span class="cool_underline">każdy rodzaj</span> prawa jazdy w Polsce!</h2>
@@ -37,7 +34,7 @@
                 foreach($rows as $row){ 
                     echo "<section class='store_section home_preview'>";
                     echo "<h1 class='cool_underline'>".$row['kategoria']."</h1>";
-                    echo "<a class='home_preview_a' href='purchase.php?id=".$row['id_kurs']."'><button>Zobacz</button></a>";
+                    echo "<a class='home_preview_a' href='course-preview.php?id=".$row['id_kurs']."'><button>Zobacz</button></a>";
                     echo "</section>";
                 }
             ?>
@@ -60,7 +57,6 @@
                 }
             ?>
             </section>
-        </main>
         <?php
             include "../public/components/footer.shtml";
         ?>
@@ -68,3 +64,18 @@
     <script src="../public/scroll.js" defer></script>
 </body>
 </html>
+
+<script>
+    const header = document.querySelector("header");
+    const body = document.body;
+
+    body.classList.add('transparent-header');
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > header.offsetTop) {
+            body.classList.remove('transparent-header');
+        } else {
+            body.classList.add('transparent-header');
+        }
+    })
+</script>

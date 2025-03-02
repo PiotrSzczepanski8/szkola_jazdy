@@ -6,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_field = $_POST['id_field'];
     $id_value = $_POST['id_value'];
 
-    // Budowanie dynamicznego zapytania
     $updateFields = [];
     foreach ($_POST as $key => $value) {
         if (!in_array($key, ['table', 'id_field', 'id_value']) && !empty($value)) {
@@ -15,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Sprawdzenie, czy są pola do aktualizacji
     if (!empty($updateFields)) {
         $query = "UPDATE $table SET " . implode(", ", $updateFields) . " WHERE $id_field = $id_value";
         

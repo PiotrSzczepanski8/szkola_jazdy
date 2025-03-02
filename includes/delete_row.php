@@ -16,6 +16,6 @@
 
     mysqli_query($conn, $query);
 
-    header("Location: index.html");
+    header("Location: ../admin/index.php");
     exit();
 ?>

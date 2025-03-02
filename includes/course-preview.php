@@ -47,7 +47,7 @@
             echo $kategoria;
         ?>
     </h3>
-    <form action="purchase.php" method="post">
+    <form action="course-preview.php" method="post">
             <p>
                 <?php
                     echo $opis;

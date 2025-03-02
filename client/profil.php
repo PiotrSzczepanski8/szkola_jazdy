@@ -16,25 +16,9 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <section>
-                <a href="index.php" class="logotype">
-                    LimoAuto
-                    <img src="../public/logo.svg" class="logo">
-                </a>
-            </section>
-            <nav>
-                <?php
-                    // session_start();
-                    if(isset($_SESSION['login'])){
-                        $login = $_SESSION['login'];
-                        echo $login;
-                    }
-                ?>
-                <a href="index.php" class="line_link">strona główna</a>
-                <a href="../public/logout.php" class="line_link logout">wyloguj</a>
-            </nav>
-        </header>
+        <?php
+            include "../public/components/header.shtml";
+        ?>
         <main class="profile_main">
             <?php
                 require_once("../config/connection.php");

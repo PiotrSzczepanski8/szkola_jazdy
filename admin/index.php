@@ -78,15 +78,13 @@
                                 echo "</tbody>";
                                 echo "</table>";
                             }
-                        }else{
-
+                        }else if($user_type == "instruktor"){
+                            // lekcje z kursantami
+                            // wypłaty
                         }
                     }
 
                 ?>
-            </section>
-            <section class="tables">
-                
             </section>
         </main>
     </div>

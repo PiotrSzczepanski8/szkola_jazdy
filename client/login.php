@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if(session_status() !== PHP_SESSION_ACTIVE){
+        session_start();
+    }
     if(isset($_SESSION['login'])){
         header("Location: index.php");
         exit();
@@ -15,19 +17,10 @@
     <title>Zaloguj się</title>
 </head>
 <body>
+    <?php
+        include "../public/components/header.shtml";    
+    ?>
     <div class="container">
-        <header>
-            <section>
-                <a href="index.php" class="logotype">
-                    LimoAuto
-                    <img src="../public/logo.svg" class="logo">
-                </a>
-            </section>
-            <nav>
-                <a href="register.php" class="line_link">zarejestruj się</a>
-                <a href="index.php" class="line_link">strona główna</a>
-            </nav>
-        </header>
         <main>
             <section class="login_section">
                 <h3>Zaloguj się</h3>

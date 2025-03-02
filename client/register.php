@@ -16,18 +16,9 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <section>
-                <a href="index.php" class="logotype">
-                    LimoAuto
-                    <img src="../public/logo.svg" class="logo">
-                </a>
-            </section>
-            <nav>
-                <a href="login.php" class="line_link">zaloguj się</a>
-                <a href="index.php" class="line_link">strona główna</a>
-            </nav>
-        </header>
+        <?php
+            include "../public/components/header.shtml";
+        ?>
         <main>
             <section class="login_section">
                 <h3>Zarejestruj się</h3>
