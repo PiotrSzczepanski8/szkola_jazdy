@@ -1,4 +1,4 @@
-# Driving School Website - LimoAuto <img src="public/logo.svg" style="width: 5%;">
+# Driving School Website - LimoAuto <img src="public/logo.svg" style="width: 1em;">
 
 A web application for a driving school built using PHP and MySQL. This project includes functionalities for both users and employees, enabling seamless course management.
 
