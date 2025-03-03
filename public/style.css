@@ -1,14 +1,10 @@
-@font-face {
-    font-family: MontserratBold;
-    src: url(MontserratBold-DOWZd.ttf)
-}
 body *::selection{
     background-color: #9dff00;
     color: #1b0075;
 }
 
 html *{
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
 }
 
 .container{
@@ -22,7 +18,7 @@ header{
     background-color: #1b0075;
     font-size: 1.5em;
     font-weight: bold;
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     user-select: none;
     position: fixed;
     top: 0;
@@ -111,7 +107,7 @@ a.line_link{
 main{
     display: flex;
     justify-content: center;
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     width: 100%;
     height: 100%;
 }
@@ -173,7 +169,7 @@ main{
     outline: #1b0075 5px solid;
     background-color: #1b0075;
     color: #fff;
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     transition: 0.5s;
     user-select: none;
     /* margin-bottom: -2%; */
@@ -189,7 +185,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -218,7 +214,7 @@ main{
     font-size: 1.17em;
     margin: 0;
     padding: 5%;
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -229,11 +225,11 @@ main{
 }
 .home_login{
     width: 20%;
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     margin-top: 2%;
 }
 input{
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     border: none;
     border-bottom: 5px solid #9dff00;
 }
@@ -285,30 +281,35 @@ hr{
 .main_section a{
     width: 49%;
 }
-.main_secondary h2{
-    text-align: left;
-    width: 50%;
-}
+
 .main_secondary{
-    /* margin-top: 2.5%; */
-    width: 67%;
-}
-.products_overview{
-    user-select: none;
-    cursor: grab;
     display: flex;
-    flex-direction: row;
-    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_secondary h2{
+    text-align: center;
     width: 50%;
-    overflow: auto;
-    white-space: nowrap;
-    /* margin-bottom: 100%; */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
 }
-.products_overview::-webkit-scrollbar{
-    display: none;
+.main_secondary p{
+    font-size: 32px;
+    font-weight: 400 !important;
+    margin: 0;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 100px;
 }
+
+.products_overview{
+    display: flex;
+}
+
 html{
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -391,7 +392,7 @@ footer{
     user-select: none;
     justify-content: center;
     margin-top: 10%;
-    font-family: MontserratBold;
+    font-family: "Montserrat", sans-serif;
     height: 3em;
     width: 100%;
     font-size: 1.2em;
@@ -418,6 +419,7 @@ td, th{
 }
 
 .slider-background{
+    position: relative;
     background-image: url("images/happy-men.webp");
     background-blend-mode: multiply;
     background-color: #1b0075aa;
@@ -439,6 +441,14 @@ td, th{
     }
 }
 
+.scroll-arrow{
+    position: absolute;
+    width: 65px;
+    bottom: 100px;
+    left: calc(50vw - 32.5px);
+    cursor: pointer;
+}
+
 .see-more-button{
     display: flex;
     gap: 15px;
@@ -447,4 +457,77 @@ td, th{
     img{
         height: 70%;
     }
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.course-img{
+    position: relative;
+}
+
+.course-img img{
+    display: block;
+    width: 640px;
+    height: 640px;
+}
+
+.course-img-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(27,0,117,0.2) 0%, rgba(51,0,219) 100%);
+    opacity: 70%;
+    transition: opacity .5s;
+}
+
+.course-element{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-basis: 33%;
+}
+
+.offer-header{
+    padding-top: 85px;
+}
+
+.course-caption{
+    aspect-ratio: 1 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.course-caption h3{
+    font-size: 48px;
+}
+
+.course-caption p{
+    font-size: 32px;
+    font-weight: bold;
+    width: 60%;
+    margin-top: 0;
+}
+
+.course-caption .see-more-button svg *{
+    fill: #3300DB;
+    transition: .2s;
+}
+
+.course-caption .see-more-button:hover svg *{
+    fill: #9dff00;
+    transition: .2s;
+}
+
+.course-caption .see-more-button{
+    font-size: 36px;
+    color: #000;
+}
+
+.course-element:nth-child(even){
+    flex-direction: column;
 }
