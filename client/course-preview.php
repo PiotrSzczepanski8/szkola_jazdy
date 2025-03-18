@@ -17,10 +17,10 @@
                 include_once "../includes/course-preview.php";
             ?>
         </main>
+    </div>
         <?php
             include "../public/components/footer.shtml";
         ?>
-    </div>
     <script src="../public/text_cutter.js" defer></script>
 </body>
 </html>

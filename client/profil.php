@@ -55,23 +55,25 @@
                         echo "Kategoria ".$kurs[$i]['kategoria'];
                         echo "</summary>";
 
-                        $query = "SELECT * FROM lekcja inner join kursant on kursant.id_kursant = lekcja.id_kursant where kursant.login like '$login';";
+                        $query = "SELECT lekcja.data_odbycia, lekcja.typ_lekcji, lekcja.godzina, lekcja.id_lekcja FROM lekcja inner join kursant on kursant.id_kursant = lekcja.id_kursant where kursant.login like '$login';";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         $ilosc_lekcji = mysqli_num_rows($result);
-                        echo $ilosc_lekcji;
+                        // print_r($row);
+                        echo "<ul class='all-lessons'>";
                         for($j = 0; $j < $ilosc_lekcji; $j++){
-                            echo "Lekcja ".($j+1);
+                            echo "<li>Lekcja ".($j+1).", typ: ".$row[$j]['typ_lekcji'].", data: ".$row[$j]['data_odbycia'].", godzina: ".$row[$j]['godzina']." <a href='move-lesson.php?id=".$row[$j]['id_lekcja']."' class='cool_underline move-lesson'>przenieś lekcję ></a></li>";
                         }
+                        echo "</ul>";
 
                         echo "</details>";
                     }
                 ?>
             </section>
         </main>
+    </div>
         <?php
             include "../public/components/footer.shtml";
         ?>
-    </div>
 </body>
 </html>

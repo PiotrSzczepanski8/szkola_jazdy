@@ -40,9 +40,9 @@
                 </form>
             </section>
         </main>
+    </div>
         <?php
             include "../public/components/footer.shtml";
         ?>
-    </div>
 </body>
 </html>

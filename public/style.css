@@ -37,7 +37,7 @@ header{
 }
 
 .transparent-header .logotype{
-    font-size: 64px;
+    font-size: 52px;
 }
 
 header .container{
@@ -51,6 +51,7 @@ nav{
     gap: 2em;
 }
 body{
+    height: 100%;
     margin: 0;
     padding-top: 100px;
 }
@@ -71,7 +72,7 @@ a {
 }
 
 a.line_link{
-    font-size: 32px;
+    font-size: 26px;
 }
 
 .line_link:hover{
@@ -171,7 +172,6 @@ main{
     color: #fff;
     font-family: "Montserrat", sans-serif;
     transition: 0.5s;
-    user-select: none;
     /* margin-bottom: -2%; */
 }
 
@@ -189,7 +189,7 @@ main{
     margin-top: 5%;
     margin-bottom: 5%;
 }
-.login_section h3, .purchase h3{
+.login_section h3{
     width: 90%;
     text-align: center;
     background-color: #1b0075;
@@ -251,7 +251,7 @@ input:focus{
     display: flex; 
     align-items: center;
     gap: 0.5em;
-    font-size: 48px;
+    font-size: 38px;
     transition: .2s;
 }
 #home{
@@ -292,13 +292,13 @@ hr{
 .main_secondary h2{
     text-align: center;
     width: 50%;
-    font-size: 64px;
+    font-size: 52px;
     font-weight: bold;
     margin: 0;
     margin-bottom: 20px;
 }
 .main_secondary p{
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 400 !important;
     margin: 0;
     width: 40%;
@@ -308,6 +308,7 @@ hr{
 
 .products_overview{
     display: flex;
+    width: 100%;
 }
 
 html{
@@ -358,14 +359,11 @@ html::-webkit-scrollbar{
     background-color: #9dff00;
 }
 .purchase{
-    user-select: none;
-    margin-top: 2%;
-    width: 20%;
     display: flex;
     flex-direction: column;
-}
-.purchase h3{
-    margin-bottom: 0;
+    align-items: center;
+    margin-top: 2%;
+    flex-direction: column;
 }
 
 .product_caption{
@@ -388,15 +386,15 @@ summary::marker{
 }
 
 footer{
-    display: flex;
+    color: #fff;
+    background-image: url("images/footer-background.png");
+    background-size: cover;
+    background-position: center;
     user-select: none;
-    justify-content: center;
     margin-top: 10%;
-    font-family: "Montserrat", sans-serif;
-    height: 3em;
-    width: 100%;
+    width: 98%;
     font-size: 1.2em;
-    background-color: #1b0075;
+    padding: 1%;
 }
 
 .table_button{
@@ -469,8 +467,9 @@ td, th{
 
 .course-img img{
     display: block;
-    width: 640px;
-    height: 640px;
+    width: 100%;
+    /* width: 640px; */
+    /* height: 640px; */
 }
 
 .course-img-overlay{
@@ -503,11 +502,11 @@ td, th{
 }
 
 .course-caption h3{
-    font-size: 48px;
+    font-size: 30px;
 }
 
 .course-caption p{
-    font-size: 32px;
+    font-size: 16px;
     font-weight: bold;
     width: 60%;
     margin-top: 0;
@@ -524,10 +523,171 @@ td, th{
 }
 
 .course-caption .see-more-button{
-    font-size: 36px;
+    font-size: 22px;
     color: #000;
 }
 
 .course-element:nth-child(even){
     flex-direction: column;
+}
+
+.tutors-header{
+    margin-bottom: 70px !important;
+}
+
+.tutors-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.tutor-segment{
+    display: flex;
+    width: 60%;
+    max-width: 1000px;
+    gap: 10%;
+}
+
+.tutor-segment:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.tutor-image{
+    width: 30%;
+}
+
+.tutor-caption{
+    width: 60%;
+}
+
+.tutor-caption h3{
+    display: inline !important;
+    width: 100% !important;
+}
+
+.tutor-image img{
+    width: 100%;
+    display: block;
+}
+
+.see-more-tutors{
+    color: #000;
+}
+
+.see-more-tutors svg{
+    height: 1.5em;
+}
+
+.see-more-tutors svg *{
+    transition: .2s;
+}
+
+
+.see-more-tutors:hover svg *{
+    fill: #3300DB;
+    transition: .2s;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom p{
+    font-weight: 200 !important;
+    margin: 0;
+}
+
+.footer-top .logotype{
+    display: flex;
+    justify-content: center;
+}
+
+.purchase h3{
+    width: 60%;
+    font-size: 52px;
+    text-align: center;
+}
+
+.course-preview-image img{
+width: 100%;
+display: block;
+}
+
+.course-preview-image{
+    position: relative;
+
+}
+
+.purchase-form{
+    display: flex;
+    gap: 5%;
+}
+
+.purchase form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.course-preview-caption{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+}
+
+.course-preview-caption p{
+    margin: 0 !important;
+    font-weight: 300 !important;
+}
+
+.purchase-submit{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.purchase input[type='submit']{
+    margin-top: 5%;
+}
+
+.login-first-button{
+    width: 150%;
+    padding: 10% !important;
+}
+
+.login-first{
+    width: 70%;
+}
+
+.login-first a{
+    width: 15%;
+}
+
+.all-lessons{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.move-lesson{
+    color: #1b0075;
+}
+
+.move-lesson-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.move-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.move-form > input{
+    margin-top: 25%;
 }

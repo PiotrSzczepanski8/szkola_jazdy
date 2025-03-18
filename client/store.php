@@ -13,7 +13,16 @@
             include "../public/components/header.shtml";
             require_once "../config/connection.php";
         ?>
+        <div class="container offer-header">
+                <section class="course_overview">
+                <div class="main_secondary">
+                    <h2 class="uppercase">Nasze kursy</h2>
+                    <p>Oferujemy kursy na wszystkie rodzaje prawa jazdy w Polsce.</p>
+                </div>
+                </section>
+            </div>
         <main class="store_main">
+            
             <?php
                 $query = "SELECT * from kurs;";
                 $result = mysqli_query($conn, $query);
@@ -28,10 +37,10 @@
                 }
             ?>
         </main>
+    </div>
         <?php
             include "../public/components/footer.shtml";
         ?>
-    </div>
     <script src="../public/text_cutter.js" defer></script>
 </body>
 </html>

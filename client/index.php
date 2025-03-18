@@ -35,7 +35,7 @@
 
                     <?php
                 require_once "../config/connection.php";
-                $query = "SELECT * from kurs limit 3;";
+                $query = "SELECT * from kurs limit 4;";
                 $result = mysqli_query($conn, $query);
                 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 
@@ -44,7 +44,7 @@
                     echo '<div class="course-caption">';
                     echo '<h3>Kurs kategorii '.$row['kategoria'].'</h3>';
                     echo '<p>'.$row['opis'].'</p>';
-                    echo '<a class="see-more-button" href="">sprawdź'.file_get_contents('../public/images/icons/arrow-right.svg').'</a>';
+                    echo '<a class="see-more-button" href="course-preview.php?id='.$row['id_kurs'].'">sprawdź'.file_get_contents('../public/images/icons/arrow-right.svg').'</a>';
                     echo '</div>';
                     echo '<div class="course-img">';
                     echo '<img src="../public/images/'.$row['obrazek'].'" alt="">';
@@ -56,21 +56,28 @@
         </div>
             <hr>
             <section class="main_secondary">
-                <h2>Poznaj naszych <span class="cool_underline">instruktorów</span></h2>
+                <h2 class="uppercase tutors-header">Poznaj naszych instruktorów</h2>
             </section>
-            <section class="products_overview">
+            <section class="tutors-container container">
             <?php
                 require_once "../config/connection.php";
-                $query = "SELECT * from pracownik WHERE typ_pracownika = 'instruktor';";
+                $query = "SELECT * from pracownik WHERE typ_pracownika = 'instruktor' limit 2;";
                 $result = mysqli_query($conn, $query);
                 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 
                 foreach($rows as $row){ 
-                    echo "<section class='store_section home_preview' style='max-height: 5em;'>";
-                    echo "<h1>".$row['imie']."<br>".$row['nazwisko']."</h1>";
-                    echo "</section>";
+                    echo "<div class='tutor-segment'>";
+                    echo "<div class='tutor-image'>";
+                    echo "<img src='../public/images/".$row['obrazek']."' alt=''>";
+                    echo "</div>";
+                    echo "<div class='tutor-caption'>";
+                    echo "<h3>".$row['imie']." ".$row['nazwisko']."</h3>";
+                    echo "<p>".$row['opis']."</p>";
+                    echo "</div>";
+                    echo "</div>";
                 }
             ?>
+            <a href="tutors.php" class='see-more-tutors see-more-button'>Zobacz więcej<?php echo file_get_contents('../public/images/icons/arrow-right.svg')?></a>
             </section>
         <?php
             include "../public/components/footer.shtml";

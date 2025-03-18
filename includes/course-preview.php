@@ -17,8 +17,13 @@
         $cena = $row[0]['cena'];
         $h_pr = $row[0]['h_praktyka'];
         $h_te = $row[0]['h_teoria'];
+        $obrazek = $row[0]['obrazek'];
         // echo $kategoria, $cena;
     }else if(!isset($_POST['kurs_id'])){
+        if(!isset($_SESSION['login'])){
+            header("Location: ../public/login_first.php");
+            exit();
+        }
         if(isset($_SESSION['product_id'])){
             $product_id = $_SESSION['product_id'];
         }
@@ -32,6 +37,8 @@
 
         // do zrobienia: algorytm automatycznego generowania danych lekcji dla kursu zakupionego przez użytkownika
 
+        include("lesson.php");
+
         echo "Zakup zakończony powodzeniem.";
         exit();
     }else{
@@ -41,35 +48,42 @@
 ?>
 
 <div class="purchase">
-    <h3>
-        Kup kurs kategorii
+    <h3 class="uppercase">
+        Kurs na prawo jazdy kategorii
         <?php
             echo $kategoria;
         ?>
     </h3>
     <form action="course-preview.php" method="post">
-            <p>
-                <?php
+        <div class="purchase-form">
+            <div class="course-preview-image">
+                <img src="../public/images/<?php echo $obrazek; ?>" alt="">
+                <div class="course-img-overlay"></div>
+            </div>
+            <div class="course-preview-caption">
+                <p>
+                    <?php
                     echo $opis;
-                ?>
-            </p>
-            <p class="cool_underline" style="width: fit-content; display: inline;">
+                    ?>
+                </p>
+                <p class="" style="width: fit-content; display: inline;">
                 <?php
-                    echo "ilość zajęć praktycznych: ".$h_pr."h";
-                ?>
-            </p>
-            <br> <br>
-            <p class="cool_underline" style="width: fit-content; display: inline;">
+                    echo "<strong>Ilość zajęć praktycznych: </strong>".$h_pr."h.";
+                    ?>
+                </p>
+                <p class="" style="width: fit-content; display: inline;">
                 <?php
-                    echo "ilość zajęć teoretycznych: ".$h_te."h";
-                ?>
-            </p>
-            <p class="cool_underline" style="width: fit-content">
+                    echo "<strong>Ilość zajęć teoretycznych: </strong>".$h_te."h.";
+                    ?>
+                </p>
+                <p class="" style="width: fit-content">
                 <?php
-                    echo "cena: ".$cena." zł.";
-                ?>
-            </p>
-            <input type="text" name="id_kurs" value="<?php echo $product_id; ?>" style="display: none;">
-        <input type="submit" class="login_submit" value="Kup">
+                    echo "<strong>Cena: </strong>".$cena." zł.";
+                    ?>
+                </p>
+                <input type="text" name="id_kurs" value="<?php echo $product_id; ?>" style="display: none;">
+            </div>
+        </div>
+        <input type="submit" value="Kup" class="purchase-submit">
     </form>
 </div>
