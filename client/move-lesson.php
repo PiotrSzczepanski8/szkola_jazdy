@@ -26,9 +26,12 @@
             $id = $_GET['id'];
         }
 
-        if
-
         if(isset($_POST['data']) and $_POST['godzina'] and $_POST['id']){
+            $user_login = $_SESSION['login'];
+            $query = "SELECT kursant.id_kursant FROM kursant WHERE kursant.login = '$user_login';";
+            $result = mysqli_query($conn, $query);
+            $user_data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $user_id = $user_data[0]['id_kursant'];
             $data = $_POST['data'];
             $godzina = $_POST['godzina'];
             $id = $_POST['id'];

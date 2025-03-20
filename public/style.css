@@ -143,36 +143,22 @@ main{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1%;
+    justify-content: flex-start;
 }
 .store_section{
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     /* box-sizing: border-box; */
     /* padding: 1%; */
-    margin-top: 1.5%;
-    border: #9dff00 5px solid;
-    flex-basis: 12%;
-    border-radius: 2em;
+    flex-basis: 20%;
+    aspect-ratio: 1;
+    background-size: contain;
 }
 .store_section h1{
     width: fit-content;
-    color: #1b0075;
-    margin: 2% 0 0 10%;
-}
-.store_section button{
-    cursor: pointer;
-    border: none;
-    height: 2em;
-    width: 100%;
-    border-radius: 0 0 2em 2em;
-    outline: #1b0075 5px solid;
-    background-color: #1b0075;
     color: #fff;
-    font-family: "Montserrat", sans-serif;
-    transition: 0.5s;
-    /* margin-bottom: -2%; */
+    margin: 2% 0 0 10%;
 }
 
 .store_section button:hover{
@@ -181,6 +167,29 @@ main{
     color: #000;
     transition: 0.5s;
 }
+
+.store_section a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.store_section .course-img-overlay{
+    background: #1b0075bb;
+    transition: .2s;
+}
+
+.store_section:hover a *{
+    transition: .2s;
+    color: #1b0075;
+}
+
+.store_section:hover .course-img-overlay{
+    background: #9dff00ee;
+    transition: .2s;
+}
+
 .login_section{
     display: flex;
     flex-direction: column;
@@ -532,7 +541,7 @@ td, th{
 }
 
 .tutors-header{
-    margin-bottom: 70px !important;
+    margin: 70px 0 !important;
 }
 
 .tutors-container{
@@ -628,6 +637,7 @@ display: block;
 .purchase form{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 60%;
 }
 
@@ -690,4 +700,22 @@ display: block;
 
 .move-form > input{
     margin-top: 25%;
+}
+
+.purchase .see-more-button{
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 5%;
+    input{
+        margin: 0;
+    }
+}
+
+.purchase .see-more-button:hover svg *{
+    fill: #3300DB;
+    transition: .2s;
+}
+
+.purchase .see-more-button svg *{
+    transition: .2s;
 }

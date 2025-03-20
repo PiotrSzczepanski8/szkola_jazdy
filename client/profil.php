@@ -31,7 +31,7 @@
                 $telefon = $row[0]['telefon'];
                 $email = $row[0]['email'];
                 
-                $query = "SELECT kurs.kategoria, kurs.opis FROM kurs inner join transakcja on transakcja.id_kurs = kurs.id_kurs inner join kursant on transakcja.id_kursant = kursant.id_kursant WHERE kursant.login like '$login';";
+                $query = "SELECT kurs.kategoria, kurs.opis, kurs.id_kurs FROM kurs inner join transakcja on transakcja.id_kurs = kurs.id_kurs inner join kursant on transakcja.id_kursant = kursant.id_kursant WHERE kursant.login like '$login';";
                 $result = mysqli_query($conn, $query);
                 $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 
@@ -55,7 +55,9 @@
                         echo "Kategoria ".$kurs[$i]['kategoria'];
                         echo "</summary>";
 
-                        $query = "SELECT lekcja.data_odbycia, lekcja.typ_lekcji, lekcja.godzina, lekcja.id_lekcja FROM lekcja inner join kursant on kursant.id_kursant = lekcja.id_kursant where kursant.login like '$login';";
+                        $id_kurs = $kurs[$i]['id_kurs'];
+
+                        $query = "SELECT lekcja.data_odbycia, lekcja.typ_lekcji, lekcja.godzina, lekcja.id_lekcja FROM lekcja inner join kursant on kursant.id_kursant = lekcja.id_kursant inner join kurs on lekcja.id_kurs = kurs.id_kurs where kursant.login like '$login' and kurs.id_kurs = $id_kurs;";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         $ilosc_lekcji = mysqli_num_rows($result);

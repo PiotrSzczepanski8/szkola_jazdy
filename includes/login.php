@@ -39,6 +39,7 @@
             $logged = true;
             $_SESSION['logged'] = $logged;
             $_SESSION['login'] = $login;
+            $_SESSION['user_type'] = "kursant";
             header("Location: ../client/index.php");
             exit();
         }else{

@@ -84,6 +84,9 @@
                 <input type="text" name="id_kurs" value="<?php echo $product_id; ?>" style="display: none;">
             </div>
         </div>
-        <input type="submit" value="Kup" class="purchase-submit">
+        <div class="see-more-button">
+            <input type="submit" value="Kup" class="purchase-submit">
+            <?php echo file_get_contents("../public/images/icons/arrow-right.svg");?>
+        </div>
     </form>
 </div>

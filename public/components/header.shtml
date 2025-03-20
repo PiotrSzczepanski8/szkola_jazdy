@@ -7,8 +7,7 @@
             </a>
         <nav>
             <?php
-            echo "<a href='store.php' class='line_link'>kursy</a>";
-            echo "<a href='tutors.php' class='line_link'>instruktorzy</a>";
+
             $logged = false;
             if(session_status() !== PHP_SESSION_ACTIVE){
                 session_start();
@@ -21,11 +20,24 @@
                 $login = $_SESSION['login'];
             }
             
+            $user_type = "kursant";
+
+            if(isset($_SESSION['user_type'])){
+                $user_type = $_SESSION['user_type'];
+            }
+            
+            if($user_type == "kursant"){
+                echo "<a href='store.php' class='line_link'>kursy</a>";
+                echo "<a href='tutors.php' class='line_link'>instruktorzy</a>";
+            }
+            
             if($logged == false){
                 echo "<a href='login.php' class='line_link'>zaloguj się</a>";
                 echo "<a href='register.php' class='line_link'>zarejestruj się</a>";
-            }else{
+            }else if($user_type != "admin"){
                 echo "<a href='profil.php' class='line_link'>profil</a>";
+            }
+            if($logged == true){
                 echo $login;
                 echo "<a href='../public/logout.php' class='line_link logout'>wyloguj</a>";
             }

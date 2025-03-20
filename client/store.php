@@ -8,7 +8,7 @@
     <title>LimoAuto</title>
 </head>
 <body>
-    <div class="container">
+    <div class="">
         <?php
             include "../public/components/header.shtml";
             require_once "../config/connection.php";
@@ -29,11 +29,13 @@
                 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 
                 foreach($rows as $row){ 
-                    echo "<section class='store_section'>";
-                    echo "<h1 class='cool_underline'>".$row['kategoria']."</h1>";
+                    echo "<div class='store_section' style='background-image: url("."../public/images/".$row['obrazek']."')'>";
+                    echo "<a href='course-preview.php?id=".$row['id_kurs']."'>";
+                    echo "<h1 class=''>".$row['kategoria']."</h1>";
                     echo "<p class='description'>".$row['opis']."</p>";
-                    echo "<a href='course-preview.php?id=".$row['id_kurs']."'><button>Kup kurs</button></a>";
-                    echo "</section>";
+                    echo "</a>";
+                    echo "<div class='course-img-overlay'></div>";
+                    echo "</div>";
                 }
             ?>
         </main>
