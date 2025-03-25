@@ -719,3 +719,73 @@ display: block;
 .purchase .see-more-button svg *{
     transition: .2s;
 }
+
+.calendar{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 400;
+}
+
+.day{
+    cursor: pointer;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.calendar-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5% 0;
+    grid-column: 1/-1;
+    background-color: #1b0075;
+    color: #fff;
+    margin: 0;
+    padding: 2% 0;
+}
+
+.calendar-header a{
+    font-size: 32px;
+    color: #9dff00;
+}
+
+.unactivable{
+    color: #0000004D;
+    background-color: transparent !important;
+}
+
+.lesson-day{
+    background-color: #9dff00;
+}
+
+.calendar-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+}
+
+.purchased-courses{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.day-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.day.active{
+    color: #9dff00;
+    background-color: #1b0075;
+}

@@ -8,7 +8,7 @@
     <?php
     include "../public/components/font-embed.shtml";
     ?>
-    <title>LimoAuto</title>
+    <title>Poznaj instruktorów</title>
 </head>
 <body>
     <?php
