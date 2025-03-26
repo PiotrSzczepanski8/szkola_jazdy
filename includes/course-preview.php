@@ -35,11 +35,12 @@
         $query = "INSERT INTO transakcja(id_kurs, id_kursant, data_transakcji) VALUES('$product_id', '$client_id', '$curr_date');";
         mysqli_query($conn, $query);
 
-        // do zrobienia: algorytm automatycznego generowania danych lekcji dla kursu zakupionego przez użytkownika
-
         include("lesson.php");
 
-        echo "Zakup zakończony powodzeniem.";
+        echo "<div class='purchase-confirm'><p>Zakup zakończony powodzeniem.</p>";
+        echo "<a class='see-more-button' href='../client/profil.php'>Zobacz swoje kursy".file_get_contents("../public/images/icons/arrow-right.svg")."</a>";
+        echo "<a class='see-more-button' href='../client/index.php'>Wróć na stronę główną".file_get_contents("../public/images/icons/arrow-right.svg")."</a>";
+        echo "</div>";
         exit();
     }else{
         echo "coś nie działa... :(";
