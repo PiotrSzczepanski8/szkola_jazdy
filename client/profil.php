@@ -27,6 +27,9 @@
                 require_once("../config/connection.php");
 
                 $monthOffset = isset($_GET['monthOffset']) ? (int)$_GET['monthOffset'] : 0;
+                if($monthOffset < 0){
+                    $monthOffset = 0;
+                }
                 $today = date("Y-m-01");
                 $selectedMonth = date("Y-m-01", strtotime("$today + $monthOffset months"));
 
@@ -89,15 +92,17 @@
                         }
 
                         $date_i = $month_start;
-                        setlocale(LC_TIME, 'pl_PL', 'pl', 'Polish_Poland.28592');
-                        $month = strftime('%B %Y', strtotime($selectedMonth));
+
+                        $formatter = new IntlDateFormatter('pl_PL', IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'Europe/Warsaw', IntlDateFormatter::GREGORIAN, 'LLLL yyyy');
+                        $month = $formatter->format(strtotime($selectedMonth));
+
 
                         echo "<h2>Kurs na prawo jazdy kategorii ".$kurs[$i]['kategoria']."</h2>";
                         echo "<div class='calendar-container'>";
                         echo "<div class='calendar'>";
                         echo "<div class='calendar-header'>";
                         echo "<a href='profil.php?monthOffset=" . ($monthOffset - 1) . "' class='prev-month'>&#x25C0;</a>";
-                        echo "<span class='month-name'>" . ucfirst($monthLabel) . "</span>";
+                        echo "<span class='month-name'>" . ucfirst($month) . "</span>";
                         echo "<a href='profil.php?monthOffset=" . ($monthOffset + 1) . "' class='next-month'>&#x25B6;</a>";
                         echo "</div>";
                         $month = date('F Y', strtotime($selectedMonth));
@@ -200,6 +205,16 @@ document.addEventListener("DOMContentLoaded", function() {
             dayInfo.innerHTML = `<p>Nie masz zaplanowanych lekcji w tym dniu.</p>`;
         }
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("scrollPosition") !== null) {
+        window.scrollTo(0, localStorage.getItem("scrollPosition"));
+    }
+
+    window.addEventListener("beforeunload", function () {
+        localStorage.setItem("scrollPosition", window.scrollY);
+    });
 });
 
 </script>
