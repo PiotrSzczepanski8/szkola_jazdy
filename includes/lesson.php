@@ -99,7 +99,10 @@ $lesson_date = $course_start;
 for ($i = 0; $i < $h_te; $i++) {
     $lesson_date = new DateTime($lesson_date);
     // Skip weekends
-    if ($lesson_date->format("l") == "Saturday" || $lesson_date->format("l") == "Sunday") {
+    if($lesson_date->format("l") == "Saturday") {
+        $lesson_date->modify("+1 day"); // Move to the next Monday
+    }
+    if($lesson_date->format("l") == "Sunday") {
         $lesson_date->modify("+1 day"); // Move to the next Monday
     }
     $formatted_date = $lesson_date->format("Y-m-d");
@@ -124,7 +127,10 @@ for ($i = 0; $i < $h_te; $i++) {
 for ($i = 0; $i < $h_pr; $i++) {
     $lesson_date = new DateTime($lesson_date);
     // Skip weekends
-    if ($lesson_date->format("l") == "Saturday" || $lesson_date->format("l") == "Sunday") {
+    if($lesson_date->format("l") == "Saturday") {
+        $lesson_date->modify("+1 day"); // Move to the next Monday
+    }
+    if($lesson_date->format("l") == "Sunday") {
         $lesson_date->modify("+1 day"); // Move to the next Monday
     }
     $formatted_date = $lesson_date->format("Y-m-d");
